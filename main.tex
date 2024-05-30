@@ -45,10 +45,8 @@
 
         \begin{itemize}
             \item Les différents types de mémoires
-            \item La hiérarchie mémoire (Pourquoi et Comment ?)
-            \item Principe de localité (temporelle et spatiale)
-            \item La gestion de la mémoire (virtuelle et physique)
-            \item La pagination
+            \item La hiérarchie de la mémoire
+            \item La gestion de la mémoire par pagination
         \end{itemize}
     \end{block}
 \end{frame}
@@ -93,7 +91,7 @@
     \end{alertblock}
 \end{frame}
 
-\begin{frame}{Cons\'equences}
+\begin{frame}<presentation:0>[noframenumbering]{Cons\'equences}
     \begin{figure}[ht]
         \centering
         \centering
@@ -122,8 +120,7 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Hiérarchie Mémoire}
-
+    \frametitle{Les différent types de mémoires}
     \begin{alertblock}{Questions :}
         \begin{itemize}
             \item Quelles types de memoires connaissez-vous ?
@@ -150,6 +147,7 @@
         \item \textbf{Centrale} : Mémoire de vitesse moyenne, coût moyen et
               volatile. \\
               Contient les données et instructions des programmes en cours
+              d'exécution
               %   ($ \simeq 2-20 \$ / GB$)
         \item \textbf{Stockage} : Mémoire lente, peu coûteuse et non volatile
               . \\
@@ -162,30 +160,31 @@
 \end{frame}
 
 \begin{frame}{Hiérarchie mémoire}
-    \begin{block}{Principe de localité}
-        Les programmes ont tendance à accéder aux \textbf{données} et
-        \textbf{instructions} :
-        \begin{enumerate}
-            \item plusieurs fois \`a la suite (\textbf{localité temporelle})
-            \item proches les unes des autres (\textbf{localité spatiale})
-        \end{enumerate}
-        Il convient donc de garder les données fréquemment utilisées rapidement
-        accessible pour le CPU
-    \end{block}
-    \begin{itemize}
-        \item Le système de mémoire est construit comme une hiérarchie
-              de
-              couches
-        \item Chaque type de m\'emoire r\'epond \`a un objectif en
-              terme de
-              rapidit\'e/taille/co\^ut
-    \end{itemize}
 
     \begin{figure}
         \centering
         \includegraphics[width=.75\textwidth]{figures/memory_speed_HH.png}
         \caption{Hiérarchie de la mémoire \cite{harris2021digital}}
     \end{figure}
+    \begin{itemize}
+        \item Chaque type de m\'emoire r\'epond \`a un objectif en
+              terme de
+              rapidit\'e/taille/co\^ut
+    \end{itemize}
+    \textbf{Principe de localité}
+    \begin{itemize}
+        \item Les programmes ont tendance à accéder aux \textbf{données} et
+              \textbf{instructions} :
+              \begin{enumerate}
+                  \item plusieurs fois \`a la suite (\textbf{localité
+                            temporelle})
+                  \item proches les unes des autres (\textbf{localité
+                            spatiale})
+              \end{enumerate}
+        \item Il convient donc de garder les données fréquemment utilisées
+              rapidement
+              accessible par le CPU (proche du CPU)
+    \end{itemize}
 
 \end{frame}
 
@@ -219,7 +218,8 @@
               les caches)
     \end{itemize}
 \end{frame}
-\begin{frame}
+
+\begin{frame}<presentation:0>[noframenumbering]
     \frametitle{Mémoire Cache}
     \begin{block}{Principes}
         \begin{itemize}
@@ -247,9 +247,6 @@
                 width=0.15\textwidth]{figures/pyramid_layout_cache.png}};
     \end{tikzpicture}
 
-\end{frame}
-
-\begin{frame}{title}
 \end{frame}
 
 \begin{frame}<presentation:0>[noframenumbering]
@@ -281,7 +278,7 @@
     \end{block}
 \end{frame}
 
-\begin{frame}
+\begin{frame}<presentation:0>[noframenumbering]
     \frametitle{Mémoire Principale}
     \begin{block}{Mémoire Physique (RAM)}
         \begin{itemize}
@@ -307,49 +304,12 @@
     \end{tikzpicture}
 \end{frame}
 
-\begin{frame}{Est-ce suffisant ?}
+\begin{frame}<presentation:0>[noframenumbering]{Pourquoi ne pas ajouter plus de
+        RAM ?}
     \begin{figure}
         \centering
         \includegraphics[width=.75\textwidth]{figures/RAM_meme.jpg}
     \end{figure}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Mémoire Virtuelle}
-    \begin{block}{Principe}
-        \begin{itemize}
-            \item Permet de "virtuellement" d'allouée plus de mémoire que la
-                  capacité mémoire physique
-            \item Fournie l’illusion d’un \textbf{espace mémoire
-                      contigu} de
-                  grande
-                  taille au programmeur.
-            \item Chaque processus \`a son \textbf{propre espace
-                      d'adresses}
-            \item \textbf{Abstraction} decoup\'ee en blocs de taille
-                  fixe appel\'es \textbf{pages}
-            \item Gérée par l'Unité de Gestion de Mémoire
-                  (\emph{\textbf{M}emory
-                      \textbf{M}anagement \textbf{U}nit})
-
-        \end{itemize}
-    \end{block}
-    \begin{example}
-        \begin{itemize}
-            \item Architecture 16bits : $2^{16}$ adresses possibles, soit 64Ko
-                  (1Ko=$2^{10}$o) addressable virtuellement
-            \item Une configuration de 32Ko de RAM + 64Ko de disque
-            \item Memoire physique : 32Ko RAM, Memoire virtuelle : 64Ko
-            \item Espace d'adressage 32Ko = $32 \times 2^{10} = 2^5
-                      \times2^{10} = 2^{15}$o $\to$ 15 bits n\'ecessaires
-        \end{itemize}
-    \end{example}
-    \begin{tikzpicture}[remember picture, overlay]
-        \node[anchor=south west, inner sep=0pt] at
-        ([shift={(0.1cm,0.1cm)}]current page.south west)
-        {\includegraphics[alt={text},
-                width=0.15\textwidth]{figures/pyramid_layout_virtual.png}};
-    \end{tikzpicture}
 \end{frame}
 
 \begin{frame}[c]
@@ -363,15 +323,49 @@
                 virtuelle et la mémoire physique~\cite{harris2021digital}}
         \end{figure}
     \end{onlyenv}
-    \begin{onlyenv}<2->
-        \begin{figure}
-            \centering
-            \includegraphics[width=.5\textwidth]{figures/vir.png}
-            \subcaption{Diagramme de la mémoire
-                virtuelle et la mémoire physique~\cite{harris2021digital}}
-        \end{figure}
-    \end{onlyenv}
-    \pause
+\end{frame}
+
+\begin{frame}
+    \frametitle{Mémoire Virtuelle}
+    \begin{block}{Principe}
+        \begin{itemize}
+            \item Permet de \og{virtuellement}\fg{} allouer plus de mémoire
+                  que
+                  la
+                  capacité mémoire physique
+            \item Fournit l’illusion d’un \textbf{espace mémoire
+                      contigu} de grande taille au programmeur
+            \item Chaque processus \`a son \textbf{propre espace
+                      d'adresses}
+
+        \end{itemize}
+    \end{block}
+    \begin{exampleblock}{}
+        \begin{itemize}
+            \item Architecture 16bits : $2^{16}$ adresses possibles, soit 64Ko
+                  (1Ko=$2^{10}$o) adressable virtuellement
+            \item Une configuration de 32Ko de RAM + 64Ko de disque
+            \item Memoire physique : 32Ko RAM, Memoire virtuelle : 64Ko
+            \item Espace d'adressage 32Ko = $32 \times 2^{10} = 2^5
+                      \times2^{10} = 2^{15}$o $\to$ 15 bits n\'ecessaires
+        \end{itemize}
+    \end{exampleblock}
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[anchor=south west, inner sep=0pt] at
+        ([shift={(0.1cm,0.1cm)}]current page.south west)
+        {\includegraphics[alt={text},
+                width=0.15\textwidth]{figures/pyramid_layout_virtual.png}};
+    \end{tikzpicture}
+\end{frame}
+
+\begin{frame}[c]
+    \frametitle{Mémoire Virtuelle - Illustration}
+    \begin{figure}
+        \centering
+        \includegraphics[width=.5\textwidth]{figures/vir.png}
+        \subcaption{Diagramme de la mémoire
+            virtuelle et la mémoire physique~\cite{harris2021digital}}
+    \end{figure}
     \begin{alertblock}{Question : }
         \begin{itemize}
             \item
@@ -388,8 +382,7 @@
             \item Charger en mémoire \textbf{uniquement les pages nécessaires}
                   à
                   l'exécution
-            \item Principe de \textbf{localité} similaire \`a la m\'emoire
-                  cache
+            \item Principe de \textbf{localité}
         \end{itemize}
     \end{exampleblock}
 
@@ -427,19 +420,19 @@
 \end{frame}
 
 \begin{frame}{Pagination}
-    \begin{block}{Principe}
-        \begin{itemize}
-            \item Un processus \textbf{n'utilise pas toute la mémoire} qui
-                  lui est
-                  allouée en même
-                  temps
-            \item Charger en mémoire \textbf{uniquement les pages nécessaires}
-                  à
-                  l'exécution
-            \item Principe de \textbf{localité} similaire \`a la m\'emoire
-                  cache
-        \end{itemize}
-    \end{block}
+    % \begin{block}{Principe}
+    %     \begin{itemize}
+    %         \item Un processus \textbf{n'utilise pas toute la mémoire} qui
+    %               lui est
+    %               allouée en même
+    %               temps
+    %         \item Charger en mémoire \textbf{uniquement les pages nécessaires}
+    %               à
+    %               l'exécution
+    %         \item Principe de \textbf{localité} similaire \`a la m\'emoire
+    %               cache
+    %     \end{itemize}
+    % \end{block}
     \begin{block}{D\'efinition}
         \begin{itemize}
             \item \textbf{Pagination} : Division de la mémoire virtuelle en
@@ -449,11 +442,6 @@
                   \textbf{pages}
             \item \textbf{Tables de Pages} : Associe les pages
                   virtuelles aux pages physiques
-            \item \textbf{MMU} : Traduction des adresses virtuelles en
-                  adresses physiques
-            \item \textbf{TLB} : Cache pour accélérer la
-                  traduction (\emph{\textbf{T}ranslation \textbf{L}ookaside
-                      \textbf{B}uffer})
         \end{itemize}
     \end{block}
 \end{frame}
@@ -483,12 +471,12 @@
             Taille de page : 4Ko. \\
         }
     \end{figure}
-    $\to$ Le\c{c}on X pour des tables des pages plus complexe.
+    % $\to$ Le\c{c}on X pour des tables des pages plus complexe.
 
     % \includegraphics[width=\linewidth]{memory_mapping_example}
 \end{frame}
 
-\begin{frame}
+\begin{frame}<presentation:0>[noframenumbering]
     \frametitle{Translation Lookaside Buffer (TLB)}
 
     \begin{alertblock}{Problème de performance}
@@ -510,6 +498,7 @@
                   pages
         \end{itemize}
     \end{exampleblock}
+
     \begin{figure}
         \centering
         \includegraphics[width=.35\textwidth]{figures/TLB.png}
@@ -521,23 +510,27 @@
 \begin{frame}{Conclusion}
     \begin{block}{Mémoire dans les systèmes informatiques}
         \begin{itemize}
-            \item La hiérarchie mémoire est une solution aux
-                  contraintes de \\\textbf{rapidité}, \textbf{capacité} et
-                  \textbf{coût}
-            \item La \textbf{localité} est un principe fondamental pour la
-                  gestion
-                  de la
-                  mémoire
+            \item Les différents types de mémoires sont
+                  \begin{itemize}
+                      \item registres, caches, mémoire centrale et mémoire de
+                            masse
+                  \end{itemize}
+            \item La hiérarchie mémoire :
+                  \begin{itemize}
+                      \item divise la mémoire en niveaux de rapidité et de
+                            capacité
+                      \item est une solution aux contraintes de
+                            \textbf{rapidité},
+                            \textbf{capacité} et \textbf{coût}
+                      \item r\'epond au princpe de \textbf{localité}
+                  \end{itemize}
             \item \textbf{Mémoire virtuelle} : Vision unifiée de la
                   mémoire pour les programmes
             \item \textbf{Pagination} : Division de la mémoire en
                   pages pour gérer la
                   localité
-            \item La \textbf{table des pages} (MMU) traduit les adresses
+            \item La \textbf{table des pages} traduit les adresses
                   virtuelles en adresses physiques
-            \item Les \textbf{caches} et les \textbf{TLB} sont des éléments
-                  clés pour accélérer
-                  l'accès à la mémoire
         \end{itemize}
     \end{block}
     \begin{exampleblock}{Prochaines leçons}
@@ -546,6 +539,10 @@
             \item Politiques de remplacement et d'\'ecriture dans les caches
             \item Tables de pages avancées (multi-niveaux, inversion de pages)
             \item Algorithmes de remplacement de pages
+            \item * Les différents types de mémoires
+            \item * La hiérarchie de la mémoire
+            \item * La gestion de la mémoire par pagination
+
         \end{itemize}
     \end{exampleblock}
 \end{frame}
