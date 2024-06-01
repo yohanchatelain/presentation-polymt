@@ -1,0 +1,77 @@
+%% Creator: Inkscape 1.3.1 (9b9bdc1480, 2023-11-25, custom), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'Von-Neumann-Architecture-Diagram.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{610.0153501bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.63788367)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{Von-Neumann-Architecture-Diagram.pdf}}%
+    \put(0.28651445,0.56737936){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Unité centrale de calcul (CPU)\\\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{Von-Neumann-Architecture-Diagram.pdf}}%
+    \put(0.37732663,0.48567915){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Unité de controle\\\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{Von-Neumann-Architecture-Diagram.pdf}}%
+    \put(0.37480722,0.06502505){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Unité de mémoire\\\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{Von-Neumann-Architecture-Diagram.pdf}}%
+    \put(0.50100919,0.39298007){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Unité \\Arithmétique/Logique\\\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{Von-Neumann-Architecture-Diagram.pdf}}%
+    \put(0.38939852,0.28041749){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Registres\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{Von-Neumann-Architecture-Diagram.pdf}}%
+    \put(0.55555617,0.27749606){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}PC\end{tabular}}}}%
+    \put(0.65357906,0.27749606){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}CIR\end{tabular}}}}%
+    \put(0.6526641,0.22928113){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}MDR\end{tabular}}}}%
+    \put(0.55531031,0.22928109){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}MAR\end{tabular}}}}%
+    \put(0.45863309,0.22928113){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}AC\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{Von-Neumann-Architecture-Diagram.pdf}}%
+    \put(0.07029926,0.38514104){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Entrées\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{Von-Neumann-Architecture-Diagram.pdf}}%
+    \put(0.92912695,0.3849771){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Sorties\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="612.35447"
-     inkscape:cy="354.9676"
+     inkscape:zoom="22.627417"
+     inkscape:cx="113.57903"
+     inkscape:cy="897.49528"
      inkscape:window-width="2560"
      inkscape:window-height="1376"
      inkscape:window-x="0"
@@ -34,6 +34,25 @@
      inkscape:current-layer="layer1" />
   <defs
      id="defs1">
+    <marker
+       style="overflow:visible"
+       id="RoundedArrow"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Rounded arrow"
+       markerWidth="2"
+       markerHeight="2"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="m -0.21114562,-4.1055728 6.42229122,3.21114561 a 1,1 90 0 1 0,1.78885438 L -0.21114562,4.1055728 A 1.236068,1.236068 31.717474 0 1 -2,3 v -6 a 1.236068,1.236068 148.28253 0 1 1.78885438,-1.1055728 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="path8" />
+    </marker>
     <marker
        style="overflow:visible"
        id="marker29"
@@ -215,44 +234,6 @@
          style="fill:none;stroke:context-stroke;stroke-width:1"
          d="M 0,4 V -4"
          id="path26-0-8" />
-    </marker>
-    <marker
-       style="overflow:visible"
-       id="marker29-3"
-       refX="0"
-       refY="0"
-       orient="auto-start-reverse"
-       inkscape:stockid="Triangle arrow"
-       markerWidth="2"
-       markerHeight="2"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         transform="scale(0.5)"
-         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
-         d="M 5.77,0 -2.88,5 V -5 Z"
-         id="path29-1" />
-    </marker>
-    <marker
-       style="overflow:visible"
-       id="marker29-3-8"
-       refX="0"
-       refY="0"
-       orient="auto-start-reverse"
-       inkscape:stockid="Triangle arrow"
-       markerWidth="2"
-       markerHeight="2"
-       viewBox="0 0 1 1"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid">
-      <path
-         transform="scale(0.5)"
-         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
-         d="M 5.77,0 -2.88,5 V -5 Z"
-         id="path29-1-1" />
     </marker>
   </defs>
   <g
@@ -878,27 +859,27 @@
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:UnVada;-inkscape-font-specification:'UnVada, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.328001;stroke-dasharray:none;stroke-opacity:1"
        x="128.00296"
-       y="210.9944"
+       y="207.29028"
        id="text9"><tspan
          sodipodi:role="line"
          id="tspan9"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:UnVada;-inkscape-font-specification:'UnVada, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.328001"
          x="128.00296"
-         y="210.9944">Bit de </tspan><tspan
+         y="207.29028">Bit de </tspan><tspan
          sodipodi:role="line"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:UnVada;-inkscape-font-specification:'UnVada, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.328001"
          x="128.00296"
-         y="218.04996"
+         y="214.34584"
          id="tspan12">présence/</tspan><tspan
          sodipodi:role="line"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:UnVada;-inkscape-font-specification:'UnVada, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.328001"
          x="128.00296"
-         y="225.1055"
+         y="221.40138"
          id="tspan11">absence</tspan><tspan
          sodipodi:role="line"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:UnVada;-inkscape-font-specification:'UnVada, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.328001"
          x="128.00296"
-         y="232.16106"
+         y="228.45694"
          id="tspan10" /></text>
     <text
        xml:space="preserve"
@@ -1168,10 +1149,6 @@
        id="path22" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.357252;stroke-dasharray:none;stroke-opacity:1"
-       d="m 187.90999,249.68563 v 15.41422"
-       id="path22-03" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.357252;stroke-dasharray:none;stroke-opacity:1"
        d="m 42.596673,250.74105 v 15.41423"
        id="path22-3" />
     <path
@@ -1266,12 +1243,12 @@
        sodipodi:nodetypes="cc" />
     <path
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.357252;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Stop);marker-end:url(#marker26)"
-       d="M 22.277257,248.71094 H 62.921293"
+       d="M 22.710511,248.18177 H 62.269176"
        id="path24"
        sodipodi:nodetypes="cc" />
     <path
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.357252;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Stop-1);marker-end:url(#marker26-3)"
-       d="M 63.789565,248.70592 H 187.49039"
+       d="M 64.339529,248.17675 H 186.95282"
        id="path24-1"
        sodipodi:nodetypes="cc" />
     <rect
@@ -1504,12 +1481,12 @@
        id="path22-0-5" />
     <path
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.357252;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Stop-8);marker-end:url(#marker26-7)"
-       d="M 33.784897,39.010222 H 62.758121"
+       d="M 34.271826,39.010222 H 62.256819"
        id="path24-2"
        sodipodi:nodetypes="cc" />
     <path
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.357252;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Stop-1-2);marker-end:url(#marker26-3-05)"
-       d="M 63.626393,39.005202 H 188.39538"
+       d="M 64.18898,39.005202 H 187.95156"
        id="path24-1-4"
        sodipodi:nodetypes="cc" />
     <path
@@ -1518,11 +1495,12 @@
        id="path27"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.328001;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker29)"
-       d="M 39.399461,248.63009 V 190.5937 h 9.261128"
-       id="path28" />
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.328001;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker29)"
+       d="m 39.399461,248.19639 0,-57.60269 h 0.762888 8.49824"
+       id="path28"
+       sodipodi:nodetypes="cccc" />
     <path
-       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.328001;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker29)"
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.328001;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker29);stroke-linejoin:round"
        d="M 133.72868,184.99244 V 50.820774 H 48.899852 v -6.429053"
        id="path30"
        sodipodi:nodetypes="cccc" />
@@ -1547,12 +1525,12 @@
        d="m 21.59525,268.48758 v 11.41168"
        id="path32-7" />
     <path
-       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.328001;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker29-3)"
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.328001;stroke-dasharray:0.32800099,0.32800099;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#RoundedArrow)"
        d="M 194.7699,41.218782 V 23.636565"
        id="path33-7"
        sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.328001;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#marker29-3-8)"
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.328001;stroke-dasharray:0.32800099,0.32800099;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#RoundedArrow)"
        d="M 195.16136,268.64016 V 252.97777"
        id="path33-7-7"
        sodipodi:nodetypes="cc" />
@@ -1824,5 +1802,10 @@
        style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.128;stroke-dasharray:0.128, 0.768;stroke-dashoffset:0;stroke-opacity:1"
        d="m 24.161262,274.36959 h 36.4444"
        id="path38-37" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.328;stroke-dasharray:0.32800001,0.32800001;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#RoundedArrow)"
+       d="m 126.09869,209.58936 -18.07248,0"
+       id="path39"
+       sodipodi:nodetypes="cc" />
   </g>
 </svg>
