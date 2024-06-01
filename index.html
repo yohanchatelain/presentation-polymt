@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QCM sur la Mémoire Virtuelle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .quiz-container {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        .question {
+            font-weight: bold;
+        }
+
+        .answers {
+            margin-bottom: 20px;
+        }
+
+        .result {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="quiz-container">
+        <h1>QCM sur la Mémoire Virtuelle</h1>
+        <div id="quiz">
+            <div class="question">
+                1. Pourquoi est-il intéressant de découper la mémoire virtuelle en pages ?
+            </div>
+            <div class="answers" id="question1">
+                <input type="radio" name="question1" value="A"> A. Pour augmenter la vitesse du processeur<br>
+                <input type="radio" name="question1" value="B"> B. Pour réduire la consommation mémoire<br>
+                <input type="radio" name="question1" value="C"> C. Pour augmenter la mémoire physique<br>
+                <input type="radio" name="question1" value="D"> D. Pour simplifier l'architecture matérielle<br>
+            </div>
+            <div class="question">
+                2. Quel est l'avantage principal de la pagination ?
+            </div>
+            <div class="answers" id="question2">
+                <input type="radio" name="question2" value="A"> A. Réduire la taille des programmes<br>
+                <input type="radio" name="question2" value="B"> B. Augmenter la sécurité du système<br>
+                <input type="radio" name="question2" value="C"> C. Faciliter la gestion de la mémoire<br>
+                <input type="radio" name="question2" value="D"> D. Accélérer l'accès aux données<br>
+            </div>
+            <div class="question">
+                3. Comment la pagination aide-t-elle à améliorer la gestion de la mémoire ?
+            </div>
+            <div class="answers" id="question3">
+                <input type="radio" name="question3" value="A"> A. En allouant plus de mémoire aux processus<br>
+                <input type="radio" name="question3" value="B"> B. En réduisant la fragmentation interne<br>
+                <input type="radio" name="question3" value="C"> C. En permettant un accès plus rapide à la mémoire<br>
+                <input type="radio" name="question3" value="D"> D. En permettant la mémoire partagée<br>
+            </div>
+            <div class="question">
+                4. Quelle est une des raisons pour lesquelles la pagination peut améliorer la sécurité ?
+            </div>
+            <div class="answers" id="question4">
+                <input type="radio" name="question4" value="A"> A. En empêchant l'exécution de programmes non
+                autorisés<br>
+                <input type="radio" name="question4" value="B"> B. En isolant les espaces mémoire des différents
+                processus<br>
+                <input type="radio" name="question4" value="C"> C. En augmentant la taille de la mémoire<br>
+                <input type="radio" name="question4" value="D"> D. En réduisant la charge du processeur<br>
+            </div>
+            <div class="question">
+                5. Comment le principe de localité est-il lié à la pagination ?
+            </div>
+            <div class="answers" id="question5">
+                <input type="radio" name="question5" value="A"> A. Il permet de réduire la taille de la mémoire
+                physique<br>
+                <input type="radio" name="question5" value="B"> B. Il améliore les performances en gardant les données
+                fréquemment
+                utilisées en mémoire principale<br>
+                <input type="radio" name="question5" value="C"> C. Il augmente la complexité de la gestion de la
+                mémoire<br>
+                <input type="radio" name="question5" value="D"> D. Il permet de stocker plus de données en mémoire
+                virtuelle<br>
+            </div>
+            <button onclick="checkAnswers()">Soumettre</button>
+            <div id="result" class="result"></div>
+        </div>
+    </div>
+
+    <script>
+        const answers = {
+            question1: 'B',
+            question2: 'C',
+            question3: 'D',
+            question4: 'B',
+            question5: 'B'
+        };
+
+        const explanations = {
+            question1: {
+                B: "Correct ! La pagination aide à réduire la consommation mémoire en chargeant uniquement les pages nécessaires.",
+                A: "Incorrect. La vitesse du processeur n'est pas directement affectée par la pagination.",
+                C: "Incorrect. La pagination n'augmente pas la mémoire physique.",
+                D: "Incorrect. La pagination peut simplifier certaines choses, mais ce n'est pas la principale raison de son utilisation."
+            },
+            question2: {
+                C: "Correct ! La pagination facilite la gestion de la mémoire en simplifiant l'allocation et la libération de mémoire.",
+                A: "Incorrect. La taille des programmes n'est pas affectée par la pagination.",
+                B: "Incorrect. La sécurité peut être améliorée, mais ce n'est pas l'avantage principal.",
+                D: "Incorrect. L'accès aux données n'est pas nécessairement plus rapide avec la pagination."
+            },
+            question3: {
+                D: "Correct ! La pagination permet à différents processus de partager la mémoire de manière sécurisée.",
+                A: "Incorrect. La pagination n'alloue pas plus de mémoire aux processus.",
+                B: "Incorrect. La pagination aide à réduire la fragmentation externe, pas interne.",
+                C: "Incorrect. L'accès à la mémoire n'est pas forcément plus rapide avec la pagination."
+            },
+            question4: {
+                B: "Correct ! La pagination isole les espaces mémoire des différents processus, améliorant ainsi la sécurité.",
+                A: "Incorrect. Ce n'est pas le principal avantage de sécurité de la pagination.",
+                C: "Incorrect. La pagination n'augmente pas la taille de la mémoire.",
+                D: "Incorrect. La charge du processeur n'est pas directement affectée par la pagination."
+            },
+            question5: {
+                B: "Correct ! Le principe de localité améliore les performances en gardant les données et instructions fréquemment utilisées proches du processeur dans la mémoire principale.",
+                A: "Incorrect. Le principe de localité n'a pas pour but de réduire la taille de la mémoire physique.",
+                C: "Incorrect. Le principe de localité vise à simplifier l'accès aux données fréquentes, pas à augmenter la complexité.",
+                D: "Incorrect. Le principe de localité ne concerne pas le stockage de plus de données en mémoire virtuelle."
+            }
+        };
+
+        function checkAnswers() {
+            let score = 0;
+            const totalQuestions = 5;
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const questionId = `question${i}`;
+                const selectedAnswer = document.querySelector(`input[name="${questionId}"]:checked`);
+                const answerDiv = document.getElementById(questionId);
+
+                if (selectedAnswer && selectedAnswer.value === answers[questionId]) {
+                    score++;
+                    answerDiv.innerHTML += `<p class="correct">${explanations[questionId][selectedAnswer.value]}</p>`;
+                } else if (selectedAnswer) {
+                    answerDiv.innerHTML += `<p class="incorrect">${explanations[questionId][selectedAnswer.value]}</p>`;
+                } else {
+                    answerDiv.innerHTML += `<p class="incorrect">Vous n'avez pas sélectionné de réponse.</p>`;
+                }
+            }
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.textContent = `Vous avez obtenu ${score} sur ${totalQuestions}.`;
+        }
+    </script>
+</body>
+
+</html>
