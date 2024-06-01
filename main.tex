@@ -170,7 +170,7 @@
     \begin{figure}
         \centering
         \includegraphics[width=\linewidth]{figures/hierarchy_memory.pdf}
-        \caption{Hiérarchie de la mémoire \cite{harris2021digital}}
+        \caption{Hiérarchie de la mémoire (adapté de~\cite{harris2021digital})}
     \end{figure}
 
     \textbf{Principe de localité}
@@ -195,7 +195,8 @@
             \centering
 
             \includegraphics[width=\linewidth]{figures/hierarchy_memory_virtual.pdf}
-            \caption{Hiérarchie de la mémoire \cite{harris2021digital}}
+            \caption{Hiérarchie de la mémoire (adapté
+                de~\cite{harris2021digital})}
         \end{figure}
     \end{onlyenv}
     \begin{onlyenv}<2>
@@ -203,7 +204,8 @@
             \centering
 
             \includegraphics[width=\linewidth]{figures/hierarchy_memory_virtual_physic.pdf}
-            \caption{Hiérarchie de la mémoire \cite{harris2021digital}}
+            \caption{Hiérarchie de la mémoire (adapté
+                de~\cite{harris2021digital})}
         \end{figure}
     \end{onlyenv}
 
@@ -351,17 +353,30 @@
         \vspace*{1.25cm}
         \begin{figure}
             \centering
-            \includegraphics[height=.45\textwidth]{figures/page_table_wo.png}
+
+            \includegraphics[height=.25\textwidth]{figures/memoire_virtuelle_physique.pdf}
             \subcaption{Diagramme de la mémoire
-                virtuelle et la mémoire physique~\cite{harris2021digital}}
+                virtuelle et la mémoire physique}
         \end{figure}
     \end{onlyenv}
+    \begin{exampleblock}{Architecture 16bits}
+        \begin{itemize}
+            \item  $2^{16}$ adresses possibles, soit 64ko
+                  (1Ko=$2^{10}$o) adressable virtuellement
+            \item Une configuration de 32ko de RAM + 64ko de disque
+            \item Memoire physique : 32ko RAM, Memoire virtuelle : 64ko
+            \item Espace d'adressage 32ko = $32 \times 2^{10} = 2^5
+                      \times2^{10} = 2^{15}$o $\to$ 15 bits n\'ecessaires
+        \end{itemize}
+    \end{exampleblock}
 \end{frame}
 
 \begin{frame}
     \frametitle{Mémoire Virtuelle}
     \begin{block}{Principe}
         \begin{itemize}
+            \item \textbf{Abstraction} de la mémoire physique et secondaire par
+                  le système d'exploitation
             \item Permet de \og{virtuellement}\fg{} allouer plus de mémoire
                   que la capacité de la \textbf{mémoire physique}
             \item Fournit l’illusion d’un \textbf{espace mémoire
@@ -371,25 +386,16 @@
             \item La mémoire virtuelle est divisée en \textbf{pages}
         \end{itemize}
     \end{block}
-    \begin{exampleblock}{}
-        \begin{itemize}
-            \item Architecture 16bits : $2^{16}$ adresses possibles, soit 64Ko
-                  (1Ko=$2^{10}$o) adressable virtuellement
-            \item Une configuration de 32Ko de RAM + 64Ko de disque
-            \item Memoire physique : 32Ko RAM, Memoire virtuelle : 64Ko
-            \item Espace d'adressage 32Ko = $32 \times 2^{10} = 2^5
-                      \times2^{10} = 2^{15}$o $\to$ 15 bits n\'ecessaires
-        \end{itemize}
-    \end{exampleblock}
 \end{frame}
 
 \begin{frame}[c]
     \frametitle{Mémoire Virtuelle - Illustration}
     \begin{figure}
         \centering
-        \includegraphics[width=.15\textwidth]{figures/page_table_wo.png}
+
+        \includegraphics[width=\textwidth]{figures/memoire_virtuelle_physique.pdf}
         \subcaption{Diagramme de la mémoire
-            virtuelle et la mémoire physique~\cite{harris2021digital}}
+            virtuelle et la mémoire physique}
     \end{figure}
     \begin{alertblock}{Question : }
         \begin{itemize}
@@ -415,7 +421,7 @@
 
 \begin{frame}<presentation:0>[noframenumbering]
     \frametitle{Mémoire de Masse}
-    \begin{block}{Principes}
+    \begin{block}{Principe s}
         \begin{itemize}
             \item \textbf{Stockage non-volative} : les données sont conservées
                   même lorsque l'alimentation est coupée
@@ -476,13 +482,14 @@
     \begin{figure}
         \begin{minipage}[b]{0.45\linewidth}
             \centering
-            \includegraphics[width=.75\linewidth]{figures/page_table_wo.png}
+
+            \includegraphics[width=.75\linewidth]{figures/memoire_virtuelle_physique_T.pdf}
             \subcaption{}
             \label{fig:page_table}
         \end{minipage}
         \begin{minipage}[b]{0.5\linewidth}
             \centering
-            \includegraphics[width=.75\linewidth]{figures/page_mapping.png}
+            \includegraphics[width=.95\linewidth]{figures/page_mapping.pdf}
             \subcaption{}
             \label{fig:page_mapping}
         \end{minipage}

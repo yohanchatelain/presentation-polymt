@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QCM Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .quiz-container {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        .question {
+            font-weight: bold;
+        }
+
+        .answers {
+            margin-bottom: 20px;
+        }
+
+        .result {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="quiz-container">
+        <h1>QCM Quiz</h1>
+        <div id="quiz">
+            <div class="question">
+                1. What is the capital of France?
+            </div>
+            <div class="answers">
+                <input type="radio" name="question1" value="A"> A. Madrid<br>
+                <input type="radio" name="question1" value="B"> B. Berlin<br>
+                <input type="radio" name="question1" value="C"> C. Paris<br>
+                <input type="radio" name="question1" value="D"> D. Rome<br>
+            </div>
+            <div class="question">
+                2. What is 2 + 2?
+            </div>
+            <div class="answers">
+                <input type="radio" name="question2" value="A"> A. 3<br>
+                <input type="radio" name="question2" value="B"> B. 4<br>
+                <input type="radio" name="question2" value="C"> C. 5<br>
+                <input type="radio" name="question2" value="D"> D. 6<br>
+            </div>
+            <button onclick="checkAnswers()">Submit</button>
+            <div id="result" class="result"></div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            const answers = {
+                question1: 'C',
+                question2: 'B'
+            };
+
+            let score = 0;
+            let totalQuestions = 2;
+
+            const form = document.querySelectorAll('.answers');
+            form.forEach((answerDiv, index) => {
+                const questionNumber = `question${index + 1}`;
+                const selectedAnswer = answerDiv.querySelector('input[name="' + questionNumber + '"]:checked');
+                if (selectedAnswer && selectedAnswer.value === answers[questionNumber]) {
+                    score++;
+                }
+            });
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.textContent = `You scored ${score} out of ${totalQuestions}`;
+        }
+    </script>
+</body>
+
+</html>
