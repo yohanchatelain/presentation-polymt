@@ -19,6 +19,9 @@
 \usepackage{bm}
 \usepackage{subcaption}
 \usepackage{tikz}
+\usepackage{wasysym}
+\usepackage{fontawesome5}
+\usepackage{svg}
 
 % Theme choice
 \usetheme[block=fill, sectionpage=none, progressbar=frametitle,
@@ -80,7 +83,7 @@
 \begin{frame}{Spoiler alert!}
     \begin{figure}
         \centering
-        \includegraphics[width=0.5\textwidth]{figures/meme.jpg}
+        \includegraphics[width=0.5\textwidth]{figures/meme.png}
         \label{fig:memory_speed}
     \end{figure}
 
@@ -120,11 +123,12 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Les différent types de mémoires}
+    \frametitle{Les différents types de mémoires}
     \begin{alertblock}{Questions :}
         \begin{itemize}
-            \item Quelles types de memoires connaissez-vous ?
-            \item Quelle est le r\^ole de chacune de ces m\'emoires ?
+            \item Quelles types de m\'emoires connaissez-vous ?
+            \item Quel est le r\^ole de chacune de ces m\'emoires ?
+            \item Comment ces m\'emoires sont-elles organis\'ees ?
         \end{itemize}
     \end{alertblock}
 \end{frame}
@@ -132,9 +136,12 @@
 \begin{frame}
     \frametitle{Les différent types de mémoires}
     \begin{block}{Principe général}
-
-        Plus une m\'emoire est rapide, plus elle est ch\`ere \`a
-        fabriquer, plus sa taille est limit\'ee
+        \begin{itemize}
+            \item M\'emoire rapide $\implies$ plus  ch\`ere \`a
+                  fabriquer $\implies$ taille  limit\'ee
+            \item Chaque type de m\'emoire r\'epond \`a un objectif en
+                  terme de rapidit\'e/taille/co\^ut
+        \end{itemize}
     \end{block}
     \begin{enumerate}
         \item \textbf{Registre} : Mémoire très rapide, très coûteuse et
@@ -150,10 +157,9 @@
               d'exécution
               %   ($ \simeq 2-20 \$ / GB$)
         \item \textbf{Stockage} : Mémoire lente, peu coûteuse et non volatile
-              . \\
+              \\
               Contient les données et instructions des programmes non utilisés
               \\
-              (disques magnétiques/SSD)
               %   ($ \simeq 0.05-2 \$ / GB$)
     \end{enumerate}
 
@@ -163,14 +169,10 @@
 
     \begin{figure}
         \centering
-        \includegraphics[width=.75\textwidth]{figures/memory_speed_HH.png}
+        \includegraphics[width=\linewidth]{figures/hierarchy_memory.pdf}
         \caption{Hiérarchie de la mémoire \cite{harris2021digital}}
     \end{figure}
-    \begin{itemize}
-        \item Chaque type de m\'emoire r\'epond \`a un objectif en
-              terme de
-              rapidit\'e/taille/co\^ut
-    \end{itemize}
+
     \textbf{Principe de localité}
     \begin{itemize}
         \item Les programmes ont tendance à accéder aux \textbf{données} et
@@ -185,7 +187,38 @@
               rapidement
               accessible par le CPU (proche du CPU)
     \end{itemize}
+\end{frame}
 
+\begin{frame}{Hiérarchie mémoire - Représentation au niveau du SE}
+    \begin{onlyenv}<1>
+        \begin{figure}
+            \centering
+
+            \includegraphics[width=\linewidth]{figures/hierarchy_memory_virtual.pdf}
+            \caption{Hiérarchie de la mémoire \cite{harris2021digital}}
+        \end{figure}
+    \end{onlyenv}
+    \begin{onlyenv}<2>
+        \begin{figure}
+            \centering
+
+            \includegraphics[width=\linewidth]{figures/hierarchy_memory_virtual_physic.pdf}
+            \caption{Hiérarchie de la mémoire \cite{harris2021digital}}
+        \end{figure}
+    \end{onlyenv}
+
+    \textbf{La répresentation de la mémoire :}
+    \begin{enumerate}
+        \item \textbf{Mémoire Physique} : Mémoire centrale qui contient
+              les
+              données et instructions des programmes en cours d'exécution
+        \item \textbf{Mémoire Secondaire} : Mémoire d'appoint qui
+              contient
+              les données et instructions des programmes non utilisés
+        \item<2> \textbf{Mémoire Virtuelle} : Vision unifiée de la
+            mémoire
+
+    \end{enumerate}
 \end{frame}
 
 \begin{frame}<presentation:0>[noframenumbering]
@@ -318,7 +351,7 @@
         \vspace*{1.25cm}
         \begin{figure}
             \centering
-            \includegraphics[width=.9\textwidth]{figures/vir.png}
+            \includegraphics[height=.45\textwidth]{figures/page_table_wo.png}
             \subcaption{Diagramme de la mémoire
                 virtuelle et la mémoire physique~\cite{harris2021digital}}
         \end{figure}
@@ -330,14 +363,12 @@
     \begin{block}{Principe}
         \begin{itemize}
             \item Permet de \og{virtuellement}\fg{} allouer plus de mémoire
-                  que
-                  la
-                  capacité mémoire physique
+                  que la capacité de la \textbf{mémoire physique}
             \item Fournit l’illusion d’un \textbf{espace mémoire
                       contigu} de grande taille au programmeur
             \item Chaque processus \`a son \textbf{propre espace
                       d'adresses}
-
+            \item La mémoire virtuelle est divisée en \textbf{pages}
         \end{itemize}
     \end{block}
     \begin{exampleblock}{}
@@ -350,19 +381,13 @@
                       \times2^{10} = 2^{15}$o $\to$ 15 bits n\'ecessaires
         \end{itemize}
     \end{exampleblock}
-    \begin{tikzpicture}[remember picture, overlay]
-        \node[anchor=south west, inner sep=0pt] at
-        ([shift={(0.1cm,0.1cm)}]current page.south west)
-        {\includegraphics[alt={text},
-                width=0.15\textwidth]{figures/pyramid_layout_virtual.png}};
-    \end{tikzpicture}
 \end{frame}
 
 \begin{frame}[c]
     \frametitle{Mémoire Virtuelle - Illustration}
     \begin{figure}
         \centering
-        \includegraphics[width=.5\textwidth]{figures/vir.png}
+        \includegraphics[width=.15\textwidth]{figures/page_table_wo.png}
         \subcaption{Diagramme de la mémoire
             virtuelle et la mémoire physique~\cite{harris2021digital}}
     \end{figure}
@@ -519,32 +544,36 @@
                   \begin{itemize}
                       \item divise la mémoire en niveaux de rapidité et de
                             capacité
-                      \item est une solution aux contraintes de
-                            \textbf{rapidité},
-                            \textbf{capacité} et \textbf{coût}
-                      \item r\'epond au princpe de \textbf{localité}
+                            %   \item est une solution aux contraintes de
+                            %         \textbf{rapidité},
+                            %         \textbf{capacité} et \textbf{coût}
+                      \item r\'epond au principe de \textbf{localité}
                   \end{itemize}
-            \item \textbf{Mémoire virtuelle} : Vision unifiée de la
-                  mémoire pour les programmes
-            \item \textbf{Pagination} : Division de la mémoire en
-                  pages pour gérer la
-                  localité
-            \item La \textbf{table des pages} traduit les adresses
-                  virtuelles en adresses physiques
+            \item La gestion de la mémoire par pagination :
+                  \begin{itemize}
+                      \item utilise la \textbf{mémoire virtuelle} pour allouer
+                            plus de
+                            mémoire que la mémoire physique
+                      \item divise la mémoire virtuelle en \textbf{pages}
+                      \item utilise une \textbf{table des pages} pour
+                            \textbf{traduire} les
+                            adresses
+                            virtuelles en adresses physiques
+                  \end{itemize}
         \end{itemize}
     \end{block}
-    \begin{exampleblock}{Prochaines leçons}
-        \begin{itemize}
-            \item Politiques de placement dans les caches
-            \item Politiques de remplacement et d'\'ecriture dans les caches
-            \item Tables de pages avancées (multi-niveaux, inversion de pages)
-            \item Algorithmes de remplacement de pages
-            \item * Les différents types de mémoires
-            \item * La hiérarchie de la mémoire
-            \item * La gestion de la mémoire par pagination
+    % \begin{exampleblock}{Prochaines leçons}
+    %     \begin{itemize}
+    %         \item Politiques de placement dans les caches
+    %         \item Politiques de remplacement et d'\'ecriture dans les caches
+    %         \item Tables de pages avancées (multi-niveaux, inversion de pages)
+    %         \item Algorithmes de remplacement de pages
+    %         \item * Les différents types de mémoires
+    %         \item * La hiérarchie de la mémoire
+    %         \item * La gestion de la mémoire par pagination
 
-        \end{itemize}
-    \end{exampleblock}
+    %     \end{itemize}
+    % \end{exampleblock}
 \end{frame}
 
 \bibliographystyle{apalike}
