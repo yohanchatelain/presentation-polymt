@@ -31,10 +31,10 @@
 
 % Title, author, and date information
 \title{Gestion de la Mémoire dans les Systèmes Informatiques}
-\subtitle{Hiérarchie Mémoire et Pagination}
+\subtitle{Hiérarchie de la Mémoire et Pagination}
 \author{Yohan Chatelain}
 \institute{Polytechnique Montr\'eal}
-\date{1 Juin 2024}
+\date{3 juin 2024}
 
 \begin{document}
 
@@ -118,7 +118,7 @@
               \end{itemize}
         \item Les acc\`es mémoire sont nombreux et fréquents dans les
               programmes
-        \item Ils representent le \textbf{principale goulet d'\'etranglement}
+        \item Ils repr\'esentent le \textbf{principale goulet d'\'etranglement}
     \end{itemize}
 \end{frame}
 
@@ -126,7 +126,7 @@
     \frametitle{Les différents types de mémoires}
     \begin{alertblock}{Questions :}
         \begin{itemize}
-            \item Quelles types de m\'emoires connaissez-vous ?
+            \item Quels types de m\'emoires connaissez-vous ?
             \item Quel est le r\^ole de chacune de ces m\'emoires ?
             \item Comment ces m\'emoires sont-elles organis\'ees ?
         \end{itemize}
@@ -134,7 +134,7 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Les différent types de mémoires}
+    \frametitle{Les différents types de mémoires}
     \begin{block}{Principe général}
         \begin{itemize}
             \item M\'emoire rapide $\implies$ plus  ch\`ere \`a
@@ -209,7 +209,7 @@
         \end{figure}
     \end{onlyenv}
 
-    \textbf{La répresentation de la mémoire :}
+    \textbf{La représentation de la mémoire :}
     \begin{enumerate}
         \item \textbf{Mémoire Physique} : Mémoire centrale qui contient
               les
@@ -356,7 +356,8 @@
 
             \includegraphics[height=.25\textwidth]{figures/memoire_virtuelle_physique.pdf}
             \subcaption{Diagramme de la mémoire
-                virtuelle et la mémoire physique}
+                virtuelle et la mémoire physique (adapté
+                de~\cite{tanenbaum2009modern})}
         \end{figure}
     \end{onlyenv}
     \begin{exampleblock}{Architecture 16bits}
@@ -395,7 +396,8 @@
 
         \includegraphics[width=\textwidth]{figures/memoire_virtuelle_physique.pdf}
         \subcaption{Diagramme de la mémoire
-            virtuelle et la mémoire physique}
+            virtuelle et la mémoire physique (adapté
+            de~\cite{tanenbaum2009modern})}
     \end{figure}
     \begin{alertblock}{Question : }
         \begin{itemize}
@@ -406,7 +408,7 @@
     \pause
     \begin{exampleblock}{Solution : La pagination}
         \begin{itemize}
-            \item Une application \textbf{n'utilise pas toute la mémoire} qui
+            \item Un processus \textbf{n'utilise pas toute la mémoire} qui
                   lui est
                   allouée en même
                   temps
@@ -451,19 +453,6 @@
 \end{frame}
 
 \begin{frame}{Pagination}
-    % \begin{block}{Principe}
-    %     \begin{itemize}
-    %         \item Un processus \textbf{n'utilise pas toute la mémoire} qui
-    %               lui est
-    %               allouée en même
-    %               temps
-    %         \item Charger en mémoire \textbf{uniquement les pages nécessaires}
-    %               à
-    %               l'exécution
-    %         \item Principe de \textbf{localité} similaire \`a la m\'emoire
-    %               cache
-    %     \end{itemize}
-    % \end{block}
     \begin{block}{D\'efinition}
         \begin{itemize}
             \item \textbf{Pagination} : Division de la mémoire virtuelle en
