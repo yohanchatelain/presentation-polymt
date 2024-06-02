@@ -152,16 +152,10 @@
 
                 if (selectedAnswer && selectedAnswer.value === answers[questionId]) {
                     score++;
-                    answerDiv.innerHTML += `<p class="correct">${explanations[questionId][selectedAnswer.value]}</p>`;
-                } else if (selectedAnswer) {
-                    answerDiv.innerHTML += `<p class="incorrect">${explanations[questionId][selectedAnswer.value]}</p>`;
-                } else {
-                    answerDiv.innerHTML += `<p class="incorrect">Vous n'avez pas sélectionné de réponse.</p>`;
-                }
-            }
+                    answerDiv.innerHTML += `<p class="correct">$
 
             const resultDiv = document.getElementById('result');
-            resultDiv.textContent = `Vous avez obtenu ${score} sur ${totalQuestions}.`;
+            resultDiv.textContent = `Vous avez obtenu ${ score } sur ${ totalQuestions }.`;
         }
     </script>
 </body>

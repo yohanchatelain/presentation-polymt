@@ -30,8 +30,8 @@
 \usecolortheme{orchid}
 
 % Title, author, and date information
-\title{Gestion de la Mémoire dans les Systèmes Informatiques}
-\subtitle{Hiérarchie de la Mémoire et Pagination}
+\title{Système d'exploitation}
+\subtitle{Gestion de la mémoire - Hiérarchie de la Mémoire et Pagination}
 \author{Yohan Chatelain}
 \institute{Polytechnique Montr\'eal}
 \date{3 juin 2024}
@@ -91,10 +91,10 @@
         \includegraphics[width=0.5\textwidth]{figures/meme.png}
         \label{fig:memory_speed}
     \end{figure}
-
+    \pause
     \begin{alertblock}{Problème}
         \begin{itemize}
-            \item La technologie actuelle ne satisfait pas tous ces objectifs
+            \item La technologie actuelle ne satisfait pas tous ces objectifs !
         \end{itemize}
     \end{alertblock}
 \end{frame}
@@ -121,19 +121,21 @@
         \end{itemize}
     \end{block}
     \begin{enumerate}
-        \item \textbf{Registre} : Mémoire très rapide, très coûteuse et
-              volatile. \\
-              Contient les données de travail des unités de calculs.
-        \item \textbf{Cache} : Mémoire rapide, coûteuse et volatile. \\
-              Contient les données et instructions les plus utilisées par les
-              unités de calculs.
-        \item \textbf{Centrale} : Mémoire de vitesse moyenne, coût moyen et
-              volatile. \\
-              Contient les données et instructions des programmes en cours
-              d'exécution
-        \item \textbf{Stockage} : Mémoire lente, peu coûteuse et non volatile
-              \\
-              Contient les données et instructions des programmes non utilisés
+        \item \textbf{Registre} : Contient les données de travail des unités de
+              calculs \\
+              rapide $+++$, coût \$\$\$, capacité $---$, volatile
+        \item \textbf{Cache} : Contient les données  les
+              plus utilisées par le processeur \\
+              rapide $++$, coût \$\$, capacité $--$, volatile
+        \item \textbf{Centrale} : Contient les données et instructions des
+              processus en cours d'exécution \\
+              vitesse $+$, coût \$, capacité $+$, volatile.
+        \item \textbf{Stockage} : Contient les données et instructions des
+              processus non utilisés \\
+              vitesse $--$, coût \textcent~, capacité
+              $+++$,
+              non
+              volatile
               \\
     \end{enumerate}
 
@@ -146,7 +148,7 @@
         \includegraphics[width=\linewidth]{figures/hierarchy_memory.pdf}
         \caption{Hiérarchie de la mémoire (adapté de~\cite{harris2021digital})}
     \end{figure}
-
+    \pause
     \textbf{Principe de localité}
     \begin{itemize}
         \item Les programmes ont tendance à accéder aux \textbf{données} et
@@ -191,8 +193,9 @@
         \item \textbf{Mémoire Secondaire} : Mémoire d'appoint qui
               contient
               les données et instructions des programmes non utilisés
-        \item<2> \textbf{Mémoire Virtuelle} : Vision unifiée de la
-            mémoire
+        \item<2> \textbf{Mémoire Virtuelle} : Abstraction unifiée de la
+            mémoire dont la capacité est définie par l'architecture du
+            processeur (16bits, 32bits ou 64bits)
 
     \end{enumerate}
 \end{frame}
@@ -204,12 +207,24 @@
         \begin{figure}
             \centering
 
+            \includegraphics[height=.25\textwidth]{figures/memoire_virtuelle_physique_sans_page.pdf}
+            \subcaption{Diagramme de la mémoire
+                virtuelle et la mémoire physique (adapté
+                de~\cite{tanenbaum2009modern})}
+        \end{figure}
+    \end{onlyenv}
+    \begin{onlyenv}<2>
+        \vspace*{1.25cm}
+        \begin{figure}
+            \centering
+
             \includegraphics[height=.25\textwidth]{figures/memoire_virtuelle_physique.pdf}
             \subcaption{Diagramme de la mémoire
                 virtuelle et la mémoire physique (adapté
                 de~\cite{tanenbaum2009modern})}
         \end{figure}
     \end{onlyenv}
+
     \begin{exampleblock}{Architecture 16bits}
         \begin{itemize}
             \item  $2^{16}$ adresses possibles, soit 64ko
@@ -282,14 +297,14 @@
 \begin{frame}{La Pagination}
     \begin{block}{D\'efinition}
         \begin{itemize}
-            \item \textbf{Pagination} : Division de la mémoire V/P	en
-                  blocs de taille fixe appelés \textbf{pages}
-            \item \textbf{Page} : Bloc de mémoire V/P de \textbf{taille fixe}
+            \item \textbf{Pagination} : Division de la mémoire V\&P	en
+                  blocs appelés \textbf{pages}
+            \item \textbf{Page} : Bloc de mémoire V\&P de \textbf{taille fixe}
                   (4-64ko)
             \item \textbf{Table de Pages} : Associe les \textbf{pages
                       virtuelles} aux \textbf{pages physiques}
         \end{itemize}
-        V/P : Mémoire Virtuelle / Mémoire Physique
+        V\&P : virtuelle et physique
     \end{block}
 \end{frame}
 
